@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Meta tags -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Favicon and title -->
+  <link rel="icon" href="/fav.png" />
+  <title>Switching to Redux Hooks</title>
+
+  <!-- Halfmoon CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css"
+    rel="stylesheet"
+  />
+  <!-- Custom CSS-->
+  <link href="/assets/css/custom.css" rel="stylesheet" />
+</head>
+
+  <body
+    class="with-custom-webkit-scrollbars with-custom-css-scrollbars"
+    data-set-preferred-mode-onload="true"
+  >
+    <!-- Page wrapper start -->
+    <div class="page-wrapper with-navbar">
+      <!-- Navbar start -->
+<nav class="navbar justify-content-between">
+  <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
+  <button id="moon" onclick="halfmoon.toggleDarkMode()"></button>
+  <div class="nav-links hidden-sm-and-down"><a href="/">Home</a>
+<a
+  href="https://github.com/roldyclark/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >Github</a
+>
+<a
+  href="https://www.linkedin.com/in/haroldherskowitz/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >LinkedIn</a
+>
+<a href="/resume" target="_blank" rel="noopener noreferrer"
+  >Resume</a
+>
+<a href="https://tapedrop.com" target="_blank" rel="noopener noreferrer"
+  >Tapedrop</a
+>
+</div>
+  <div class="dropdown hidden-md-and-up">
+    <button class="btn" data-toggle="dropdown" type="button">
+      <svg viewBox="0 0 80 75" width="20" height="30">
+        <rect width="80" height="15"></rect>
+        <rect y="30" width="80" height="15"></rect>
+        <rect y="60" width="80" height="15"></rect>
+      </svg>
+    </button>
+    <div
+      class="dropdown-menu dropdown-menu-right d-flex flex-column text-center"
+    >
+      <a href="/">Home</a>
+<a
+  href="https://github.com/roldyclark/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >Github</a
+>
+<a
+  href="https://www.linkedin.com/in/haroldherskowitz/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >LinkedIn</a
+>
+<a href="/resume" target="_blank" rel="noopener noreferrer"
+  >Resume</a
+>
+<a href="https://tapedrop.com" target="_blank" rel="noopener noreferrer"
+  >Tapedrop</a
+>
+
+    </div>
+  </div>
+</nav>
+<!-- Navbar end -->
+
+
+      <!-- Content wrapper start -->
+      <div class="content-wrapper">
+        <div id="post">
+  <div class="post-title text-center"><h1>Switching to Redux Hooks</h1></div>
+  <div class="d-flex justify-content-center mb-20">
+    
+    <a
+      class="post-categories m-10"
+      href="/category/React/index.html"
+      >React</a
+    >
+    
+    <a
+      class="post-categories m-10"
+      href="/category/Javascript/index.html"
+      >Javascript</a
+    >
+    
+    <a
+      class="post-categories m-10"
+      href="/category/NodeJS/index.html"
+      >NodeJS</a
+    >
+    
+    <div class="post-date m-10">August 23, 2020</div>
+  </div>
+  <div class="body m-auto"><p>React Hooks are great. They are clean, easy to read, and save time typing boilerplate. However, they are very new, and many popular tutorials have yet to fully adopt them - particularly in Redux. In this post I will be taking a component from Brad Traversy’s <a href="https://www.udemy.com/course/mern-stack-front-to-back">MERN Stack Front To Back</a> tutorial and converting it to use Redux hooks.</p>
+
+<p>Below is the Posts component. We will be using hooks to access the state of <code class="language-plaintext highlighter-rouge">post</code> and to dispatch <code class="language-plaintext highlighter-rouge">getPosts</code> without <code class="language-plaintext highlighter-rouge">connect</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Fragment, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import PostItem from './PostItem'
+import PostForm from './PostForm'
+import { getPosts } from '../../actions/post'
+
+const Posts = ({ getPosts, post: { posts } }) =&gt; {
+  useEffect(() =&gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &lt;Fragment&gt;
+      &lt;h1 className="large text-primary"&gt;Posts&lt;/h1&gt;
+      &lt;p className="lead"&gt;
+        &lt;i className="fas fa-user" /&gt; Welcome to the community
+      &lt;/p&gt;
+      &lt;PostForm /&gt;
+      &lt;div className="posts"&gt;
+        {posts.map((post) =&gt; (
+          &lt;PostItem key={post._id} post={post} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/Fragment&gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) =&gt; ({
+  post: state.post
+})
+
+export default connect(mapStateToProps, { getPosts })(Posts)
+
+</code></pre></div></div>
+
+<p>First, we can replace  <code class="language-plaintext highlighter-rouge">import { connect } from 'react-redux'</code> with <code class="language-plaintext highlighter-rouge">import { useSelector, useDispatch } from 'react-redux'</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Fragment, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { useSelector, useDispatch } from 'react-redux'
+import PostItem from './PostItem'
+import PostForm from './PostForm'
+import { getPosts } from '../../actions/post'
+
+const Posts = ({ getPosts, post: { posts } }) =&gt; {
+  useEffect(() =&gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &lt;Fragment&gt;
+      &lt;h1 className="large text-primary"&gt;Posts&lt;/h1&gt;
+      &lt;p className="lead"&gt;
+        &lt;i className="fas fa-user" /&gt; Welcome to the community
+      &lt;/p&gt;
+      &lt;PostForm /&gt;
+      &lt;div className="posts"&gt;
+        {posts.map((post) =&gt; (
+          &lt;PostItem key={post._id} post={post} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/Fragment&gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) =&gt; ({
+  post: state.post
+})
+
+export default connect(mapStateToProps, { getPosts })(Posts)
+</code></pre></div></div>
+
+<p>Next, delete <code class="language-plaintext highlighter-rouge">connect(mapStateToprops, {getPosts})</code> and the <code class="language-plaintext highlighter-rouge">const mapStateToProps</code> block.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Fragment, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { useSelector, useDispatch } from 'react-redux'
+import PostItem from './PostItem'
+import PostForm from './PostForm'
+import { getPosts } from '../../actions/post'
+
+const Posts = ({ getPosts, post: { posts } }) =&gt; {
+  useEffect(() =&gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &lt;Fragment&gt;
+      &lt;h1 className="large text-primary"&gt;Posts&lt;/h1&gt;
+      &lt;p className="lead"&gt;
+        &lt;i className="fas fa-user" /&gt; Welcome to the community
+      &lt;/p&gt;
+      &lt;PostForm /&gt;
+      &lt;div className="posts"&gt;
+        {posts.map((post) =&gt; (
+          &lt;PostItem key={post._id} post={post} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/Fragment&gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+export default Posts
+</code></pre></div></div>
+
+<p>Now we’re ready for the hooks. First is the <code class="language-plaintext highlighter-rouge">useSelector</code> hook, which will get <code class="language-plaintext highlighter-rouge">posts</code> from <code class="language-plaintext highlighter-rouge">state.post</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Fragment, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { useSelector, useDispatch } from 'react-redux'
+import PostItem from './PostItem'
+import PostForm from './PostForm'
+import { getPosts } from '../../actions/post'
+
+const Posts = ({ getPosts, post: { posts } }) =&gt; {
+
+  const { posts } = useSelector(state =&gt; state.post)
+
+  useEffect(() =&gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &lt;Fragment&gt;
+      &lt;h1 className="large text-primary"&gt;Posts&lt;/h1&gt;
+      &lt;p className="lead"&gt;
+        &lt;i className="fas fa-user" /&gt; Welcome to the community
+      &lt;/p&gt;
+      &lt;PostForm /&gt;
+      &lt;div className="posts"&gt;
+        {posts.map((post) =&gt; (
+          &lt;PostItem key={post._id} post={post} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/Fragment&gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+export default Posts
+</code></pre></div></div>
+
+<p>After this we will add the <code class="language-plaintext highlighter-rouge">useDispatch</code> hook, which will allow us to run our function <code class="language-plaintext highlighter-rouge">getPosts</code> by taking it as an argument like so: <code class="language-plaintext highlighter-rouge">dispatch(getPosts())</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Fragment, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { useSelector, useDispatch } from 'react-redux'
+import PostItem from './PostItem'
+import PostForm from './PostForm'
+import { getPosts } from '../../actions/post'
+
+const Posts = ({ getPosts, post: { posts } }) =&gt; {
+
+  const { posts } = useSelector(state =&gt; state.post)
+
+  const dispatch = useDispatch()
+
+  useEffect(() =&gt; {
+    dispatch(getPosts())
+  }, [getPosts])
+
+  return (
+    &lt;Fragment&gt;
+      &lt;h1 className="large text-primary"&gt;Posts&lt;/h1&gt;
+      &lt;p className="lead"&gt;
+        &lt;i className="fas fa-user" /&gt; Welcome to the community
+      &lt;/p&gt;
+      &lt;PostForm /&gt;
+      &lt;div className="posts"&gt;
+        {posts.map((post) =&gt; (
+          &lt;PostItem key={post._id} post={post} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/Fragment&gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+export default Posts
+</code></pre></div></div>
+
+<p>You can now remove the props from the Posts component, as well as PropTypes — since there aren’t any props to type check. And you’re done! Try it out for yourself.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Fragment, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import PostItem from './PostItem'
+import PostForm from './PostForm'
+import { getPosts } from '../../actions/post'
+
+const Posts = () =&gt; {
+
+  const { posts } = useSelector(state =&gt; state.post)
+
+  const dispatch = useDispatch()
+
+  useEffect(() =&gt; {
+    dispatch(getPosts())
+  }, [getPosts])
+
+  return (
+    &lt;Fragment&gt;
+      &lt;h1 className="large text-primary"&gt;Posts&lt;/h1&gt;
+      &lt;p className="lead"&gt;
+        &lt;i className="fas fa-user" /&gt; Welcome to the community
+      &lt;/p&gt;
+      &lt;PostForm /&gt;
+      &lt;div className="posts"&gt;
+        {posts.map((post) =&gt; (
+          &lt;PostItem key={post._id} post={post} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/Fragment&gt;
+  )
+}
+
+export default Posts
+</code></pre></div></div>
+
+<p>Note: If you use any data that isn’t from state, you will still need to pass that into props.</p>
+
+<p>To me, this code looks much more clean. The <code class="language-plaintext highlighter-rouge">connect</code> and <code class="language-plaintext highlighter-rouge">mapStateToProps</code> syntax is cumbersome to type and ineloquent to read. Thank you Hooks!</p>
+</div>
+  <hr />
+<div id="author" class="d-flex align-items-center justify-content-center">
+  <img
+    class="avatar h-100 w-100"
+    src="/assets/images/avatars/roldy.png"
+  />
+  <div class="m-20">
+    <a href="https://github.com/roldyclark" target="_blank" rel="noopener noreferrer"
+      ><p class="m-0">Harry Herskowitz</p></a
+    >
+    <p class="m-0">Harry is a web developer and programmer with a focus on using technology to empower local artists and communities</p>
+  </div>
+</div>
+<hr />
+
+  <p class="text-center mb-0">Recommended for you</p>
+</div>
+ <div id="recommended" class="d-flex flex-wrap justify-content-center m-auto">
+   
+  <a href="/2021/08/23/halfmoon-jekyll.html" class="postcard-sm">
+    <div class="card shadow-sm w-md-350 p-0 h-400">
+      <div class="h-half overflow-hidden fill">
+        <img
+          class="image w-full"
+          src="/assets/images/posts/halfmoon.jpg"
+          class="img-fluid rounded-top"
+        />
+      </div>
+      <img
+        class="avatar"
+        src="/assets/images/avatars/roldy.png"
+      />
+      <div class="h-half overflow-hidden">
+        <div class="post-categories">Jekyll</div>
+        <div class="post-title">Halfmoon-Jekyll</div>
+        <div class="post-date">August 23, 2021</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/2021/07/29/not-found-authentication-passthru.html" class="postcard-sm">
+    <div class="card shadow-sm w-md-350 p-0 h-400">
+      <div class="h-half overflow-hidden fill">
+        <img
+          class="image w-full"
+          src="/assets/images/posts/facebooklogin.jpg"
+          class="img-fluid rounded-top"
+        />
+      </div>
+      <img
+        class="avatar"
+        src="/assets/images/avatars/roldy.png"
+      />
+      <div class="h-half overflow-hidden">
+        <div class="post-categories">Rails</div>
+        <div class="post-title">Omniauth: Not found. Authentication passthru</div>
+        <div class="post-date">July 29, 2021</div>
+      </div>
+    </div>
+  </a>
+  
+</div>
+ <nav class="navbar h-100 mt-20 justify-content-center">
+  <div>© Prismoscope 2021</div>
+</nav>
+
+      </div>
+      <!-- Content wrapper end -->
+    </div>
+    <!-- Page wrapper end -->
+
+    <!-- Halfmoon JS -->
+<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+<!-- Custom JS -->
+<script src="/assets/js/custom.js"></script>
+
+  </body>
+</html>

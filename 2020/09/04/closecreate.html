@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Meta tags -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport"
+  />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Favicon and title -->
+  <link rel="icon" href="/fav.png" />
+  <title>Geolocation for Creative Collaboration</title>
+
+  <!-- Halfmoon CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css"
+    rel="stylesheet"
+  />
+  <!-- Custom CSS-->
+  <link href="/assets/css/custom.css" rel="stylesheet" />
+</head>
+
+  <body
+    class="with-custom-webkit-scrollbars with-custom-css-scrollbars"
+    data-set-preferred-mode-onload="true"
+  >
+    <!-- Page wrapper start -->
+    <div class="page-wrapper with-navbar">
+      <!-- Navbar start -->
+<nav class="navbar justify-content-between">
+  <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
+  <button id="moon" onclick="halfmoon.toggleDarkMode()"></button>
+  <div class="nav-links hidden-sm-and-down"><a href="/">Home</a>
+<a
+  href="https://github.com/roldyclark/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >Github</a
+>
+<a
+  href="https://www.linkedin.com/in/haroldherskowitz/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >LinkedIn</a
+>
+<a href="/resume" target="_blank" rel="noopener noreferrer"
+  >Resume</a
+>
+<a href="https://tapedrop.com" target="_blank" rel="noopener noreferrer"
+  >Tapedrop</a
+>
+</div>
+  <div class="dropdown hidden-md-and-up">
+    <button class="btn" data-toggle="dropdown" type="button">
+      <svg viewBox="0 0 80 75" width="20" height="30">
+        <rect width="80" height="15"></rect>
+        <rect y="30" width="80" height="15"></rect>
+        <rect y="60" width="80" height="15"></rect>
+      </svg>
+    </button>
+    <div
+      class="dropdown-menu dropdown-menu-right d-flex flex-column text-center"
+    >
+      <a href="/">Home</a>
+<a
+  href="https://github.com/roldyclark/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >Github</a
+>
+<a
+  href="https://www.linkedin.com/in/haroldherskowitz/"
+  target="_blank"
+  rel="noopener noreferrer"
+  >LinkedIn</a
+>
+<a href="/resume" target="_blank" rel="noopener noreferrer"
+  >Resume</a
+>
+<a href="https://tapedrop.com" target="_blank" rel="noopener noreferrer"
+  >Tapedrop</a
+>
+
+    </div>
+  </div>
+</nav>
+<!-- Navbar end -->
+
+
+      <!-- Content wrapper start -->
+      <div class="content-wrapper">
+        <div id="post">
+  <div class="post-title text-center"><h1>Geolocation for Creative Collaboration</h1></div>
+  <div class="d-flex justify-content-center mb-20">
+    
+    <a
+      class="post-categories m-10"
+      href="/category/React/index.html"
+      >React</a
+    >
+    
+    <a
+      class="post-categories m-10"
+      href="/category/Node/index.html"
+      >Node</a
+    >
+    
+    <a
+      class="post-categories m-10"
+      href="/category/JS/index.html"
+      >JS</a
+    >
+    
+    <div class="post-date m-10">September 04, 2020</div>
+  </div>
+  <div class="body m-auto"><p><img src="/assets/images/posts/closecreate1.jpeg" alt="closecreate screenshot" /></p>
+
+<p>Today I am happy to release <a href="https://github.com/roldyclark/closecreate">Closecreate</a>, an open source web app for bringing together creative collaborators. The app allows users to create a profile which includes a picture, location, bio, and social media links to showcase their work. They can then scroll through nearby profiles to match with in a tinder-like fashion. Once two users match they can instant message each other and discuss future collaborations.</p>
+
+<p><img src="/assets/images/posts/closecreate2.jpeg" alt="closecreate screenshot" /></p>
+
+<p>The application is built with <a href="https://reactjs.org/">React</a> on the client side, <a href="https://expressjs.com/">Express</a> (<a href="https://nodejs.org/en/about/">Node</a>) on the server side, and a <a href="https://www.mongodb.com/">MongoDB</a> database - also known as the <a href="https://www.mongodb.com/mern-stack">MERN Stack</a>. Images are uploaded and served through <a href="https://aws.amazon.com/s3/">AWS S3</a>. Each user’s current location is obtained at login through the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API">Geolocation API</a> and profiles within 30km are displayed. The app is styled with <a href="https://www.gethalfmoon.com/docs/introduction/">Halfmoon</a>, a bootstrap alternative with built-in darkmode. <a href="https://socket.io/">Socket.io</a> is used in the chat component for realtime messaging.</p>
+
+<p><img src="/assets/images/posts/closecreate3.jpeg" alt="closecreate screenshot" /></p>
+
+<p>I am currently hosting the app live on Heroku at <a href="https://www.closecreate.com">closecreate.com</a>. I’d love to see the creative community get use out of it! I also hope the open source repo is taken advantage of as this code can be reused to create all kinds of interesting matchmaking apps.</p>
+
+<p>UPDATE: I am no longer hosting this app, but the code will stay a available on my <a href="https://github.com/roldyclark/closecreate">Github</a>. I am currently working on an updated concept for Closecreate. Stay tuned.</p>
+</div>
+  <hr />
+<div id="author" class="d-flex align-items-center justify-content-center">
+  <img
+    class="avatar h-100 w-100"
+    src="/assets/images/avatars/roldy.png"
+  />
+  <div class="m-20">
+    <a href="https://github.com/roldyclark" target="_blank" rel="noopener noreferrer"
+      ><p class="m-0">Harry Herskowitz</p></a
+    >
+    <p class="m-0">Harry is a web developer and programmer with a focus on using technology to empower local artists and communities</p>
+  </div>
+</div>
+<hr />
+
+  <p class="text-center mb-0">Recommended for you</p>
+</div>
+ <div id="recommended" class="d-flex flex-wrap justify-content-center m-auto">
+   
+  <a href="/2021/08/23/halfmoon-jekyll.html" class="postcard-sm">
+    <div class="card shadow-sm w-md-350 p-0 h-400">
+      <div class="h-half overflow-hidden fill">
+        <img
+          class="image w-full"
+          src="/assets/images/posts/halfmoon.jpg"
+          class="img-fluid rounded-top"
+        />
+      </div>
+      <img
+        class="avatar"
+        src="/assets/images/avatars/roldy.png"
+      />
+      <div class="h-half overflow-hidden">
+        <div class="post-categories">Jekyll</div>
+        <div class="post-title">Halfmoon-Jekyll</div>
+        <div class="post-date">August 23, 2021</div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="/2021/07/29/not-found-authentication-passthru.html" class="postcard-sm">
+    <div class="card shadow-sm w-md-350 p-0 h-400">
+      <div class="h-half overflow-hidden fill">
+        <img
+          class="image w-full"
+          src="/assets/images/posts/facebooklogin.jpg"
+          class="img-fluid rounded-top"
+        />
+      </div>
+      <img
+        class="avatar"
+        src="/assets/images/avatars/roldy.png"
+      />
+      <div class="h-half overflow-hidden">
+        <div class="post-categories">Rails</div>
+        <div class="post-title">Omniauth: Not found. Authentication passthru</div>
+        <div class="post-date">July 29, 2021</div>
+      </div>
+    </div>
+  </a>
+  
+</div>
+ <nav class="navbar h-100 mt-20 justify-content-center">
+  <div>© Prismoscope 2021</div>
+</nav>
+
+      </div>
+      <!-- Content wrapper end -->
+    </div>
+    <!-- Page wrapper end -->
+
+    <!-- Halfmoon JS -->
+<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+<!-- Custom JS -->
+<script src="/assets/js/custom.js"></script>
+
+  </body>
+</html>

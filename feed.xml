@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://harryherskowitz.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://harryherskowitz.com/" rel="alternate" type="text/html" /><updated>2021-08-29T17:04:45-04:00</updated><id>https://harryherskowitz.com/feed.xml</id><title type="html">Halfmoon-Jekyll</title><subtitle>Jekyll Theme made with Halfmoon</subtitle><entry><title type="html">Halfmoon-Jekyll</title><link href="https://harryherskowitz.com/2021/08/23/halfmoon-jekyll.html" rel="alternate" type="text/html" title="Halfmoon-Jekyll" /><published>2021-08-23T00:00:00-04:00</published><updated>2021-08-23T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/08/23/halfmoon-jekyll</id><content type="html" xml:base="https://harryherskowitz.com/2021/08/23/halfmoon-jekyll.html">&lt;p&gt;Welcome to Halfmoon-Jekyll! I made this &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; theme using the &lt;a href=&quot;https://www.gethalfmoon.com/docs/introduction/&quot;&gt;Halfmoon&lt;/a&gt; front-end framework. It supports categories, pagination, multiple authors, and dark mode.&lt;/p&gt;
+
+&lt;p&gt;I made Halfmoon-Jekyll in order to move my blogs away from Ghost - mostly so I could save money on servers, but also so I could have more control of my content. The design is inspired by the &lt;a href=&quot;https://github.com/eddiesigner/liebling&quot;&gt;Liebling&lt;/a&gt; Ghost theme.&lt;/p&gt;
+
+&lt;p&gt;Halfmoon-Jekyll is easily customizable thanks to Halfmoon’s CSS variables. This site uses no JS aside from the dark mode toggle - which I feel very clever about.&lt;/p&gt;
+
+&lt;p&gt;Fork it on &lt;a href=&quot;https://github.com/roldyclark/halfmoon-jekyll&quot;&gt;Github&lt;/a&gt; and hack away!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Jekyll" /><summary type="html">Welcome to Halfmoon-Jekyll! I made this Jekyll theme using the Halfmoon front-end framework. It supports categories, pagination, multiple authors, and dark mode.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/halfmoon.jpg" /><media:content medium="image" url="https://harryherskowitz.com/halfmoon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Omniauth: Not found. Authentication passthru</title><link href="https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru.html" rel="alternate" type="text/html" title="Omniauth: Not found. Authentication passthru" /><published>2021-07-29T00:00:00-04:00</published><updated>2021-07-29T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru</id><content type="html" xml:base="https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru.html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/facebooklogin.jpg&quot; alt=&quot;wordpress.com screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Last week, Facebook and Google logins stopped working in a Rails app I developed. Clicking the login links redirected to a blank page that read “Not found. Authentication passthru”.&lt;/p&gt;
+
+&lt;p&gt;It took me some digging to find an answer, but at the bottom of a &lt;a href=&quot;https://stackoverflow.com/questions/13812844/devise-omniauth-facebook-not-found-authentication-passthru/68349692#68349692&quot;&gt;stack overflow thread&lt;/a&gt; user &lt;a href=&quot;https://stackoverflow.com/users/1045897/washington-botelho&quot;&gt;Washington Botelho&lt;/a&gt; had the answer with one upvote. So I thought I’d repost his answer so someone out there will have an easier time finding it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It can happen when you’re trying to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;link_to&lt;/code&gt; where the request will be a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GET&lt;/code&gt;. You need to change it to a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;button_to&lt;/code&gt; where a form will be created. Alternatively, you can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;link_to&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;method: :post&lt;/code&gt; if you have the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rails-ujs&lt;/code&gt;, but I recommend you use the form since it’ll have the CSRF on it; You need to add the gem &lt;a href=&quot;https://github.com/cookpad/omniauth-rails_csrf_protection&quot;&gt;omniauth-rails_csrf_protection&lt;/a&gt; to avoid Authenticity Error.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As user &lt;a href=&quot;https://stackoverflow.com/users/611175/flov&quot;&gt;Flov&lt;/a&gt; points out in the comments: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;As of v2.0.0, OmniAuth by default allows only POST to its own routes.&lt;/code&gt;&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Rails" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/facebooklogin.jpg" /><media:content medium="image" url="https://harryherskowitz.com/facebooklogin.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">You Don’t Need Me To Make Your Website</title><link href="https://harryherskowitz.com/2021/02/11/you-dont-need-to-pay-me-to-make-your-website.html" rel="alternate" type="text/html" title="You Don’t Need Me To Make Your Website" /><published>2021-02-11T00:00:00-05:00</published><updated>2021-02-11T00:00:00-05:00</updated><id>https://harryherskowitz.com/2021/02/11/you-dont-need-to-pay-me-to-make-your-website</id><content type="html" xml:base="https://harryherskowitz.com/2021/02/11/you-dont-need-to-pay-me-to-make-your-website.html">&lt;p&gt;Hi. I know this is weird. Why would I tell you to make your own website instead of just taking your business? Two reasons: 1) You are a young entrepreneur who should learn this stuff in order to have real control of your business. 2) You probably can’t afford me. Either way, I want to help. So, here’s a quick guide on setting up your own site.&lt;/p&gt;
+
+&lt;p&gt;First, I’ll give you the easiest options. If you just want a blog with a custom domain, you can get a WordPress site on &lt;a href=&quot;/you-dont-need-to-pay-me-to-make-your-website/wordpress.com&quot;&gt;wordpress.com&lt;/a&gt; for as little as $4 a month. I’d suggest this to anyone who isn’t technologically inclined. If you can afford $30 a month, there’s also &lt;a href=&quot;https://squarespace.com&quot;&gt;Squarespace&lt;/a&gt;, &lt;a href=&quot;https://wix.com&quot;&gt;Wix&lt;/a&gt;, and my favorite: &lt;a href=&quot;https://ghost.org&quot;&gt;Ghost&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/wordpressdotcom.jpg&quot; alt=&quot;wordpress.com screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you can’t afford more than $4 a month, but need full WordPress features, then you’ll have to host it yourself. It’ll cost about $45 a year ($3.75 a month). Here’s how to do that:&lt;/p&gt;
+
+&lt;p&gt;Step 1: Pick a hosting provider. My go-to is &lt;a href=&quot;https://reclaimhosting.com/&quot;&gt;Reclaim Hosting&lt;/a&gt;, but &lt;a href=&quot;https://websitesetup.org/best-web-hosting-sites/&quot;&gt;here&lt;/a&gt; is a list of the most popular ones. Just follow the sign up process and pick a domain and hosting plan.&lt;/p&gt;
+
+&lt;p&gt;Step 2: Install WordPress. This process will be different depending on what host you use. On Reclaim, you go to cPanel and look for the WordPress button under Applications. It’ll ask you what domain format you want to use - choose &lt;a href=&quot;https://yourdomain.com&quot;&gt;https://yourdomain.com&lt;/a&gt;. Make sure you leave the directory section blank. Name your site, give it a tagline, and set your username and password (don’t forget it!). You can keep all the default settings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/installatron.jpg&quot; alt=&quot;installatron screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step 3: You now have a WordPress site. Sign into the admin panel by adding /wp-admin to the end of your domain (ex. yourdomain.com/wp-admin) and sign in.&lt;/p&gt;
+
+&lt;p&gt;Step 4: Learn how to use WordPress! &lt;a href=&quot;https://wordpress.com/learn/&quot;&gt;Here&lt;/a&gt; is the official guide. Knowing how to use WordPress is an invaluable skill that will empower you in your entrepreneurial endeavors, as well as make you more of an asset to future employers.&lt;/p&gt;
+
+&lt;p&gt;I hope this was helpful. If after reading this you still want to hire me anyway, that’s fine with me! At least you are now more educated on what’s going on behind the scenes.&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Wordpress" /><summary type="html">Hi. I know this is weird. Why would I tell you to make your own website instead of just taking your business? Two reasons: 1) You are a young entrepreneur who should learn this stuff in order to have real control of your business. 2) You probably can’t afford me. Either way, I want to help. So, here’s a quick guide on setting up your own site.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/wordpress.jpg" /><media:content medium="image" url="https://harryherskowitz.com/wordpress.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Minimalist Art Portfolio WordPress Theme</title><link href="https://harryherskowitz.com/2020/12/30/minimalist-art-portfolio-wordpress-theme.html" rel="alternate" type="text/html" title="Minimalist Art Portfolio WordPress Theme" /><published>2020-12-30T00:00:00-05:00</published><updated>2020-12-30T00:00:00-05:00</updated><id>https://harryherskowitz.com/2020/12/30/minimalist-art-portfolio-wordpress-theme</id><content type="html" xml:base="https://harryherskowitz.com/2020/12/30/minimalist-art-portfolio-wordpress-theme.html">&lt;script src=&quot;https://gumroad.com/js/gumroad-embed.js&quot;&gt;&lt;/script&gt;
+
+&lt;div class=&quot;gumroad-product-embed&quot;&gt;&lt;a href=&quot;https://gumroad.com/l/vNTVj&quot;&gt;Loading...&lt;/a&gt;&lt;/div&gt;
+
+&lt;p&gt;If you’re an artist looking to build a portfolio site, you’ve probably considered using &lt;a href=&quot;https://cargo.site/&quot;&gt;Cargo&lt;/a&gt;. Its minimalist themes and UI are great for showcasing visual art easily. However, it can be pricey and limiting - especially compared to hosting your own WordPress site.&lt;/p&gt;
+
+&lt;p&gt;I made &lt;a href=&quot;https://jessfauscette.com/&quot;&gt;Jess&lt;/a&gt;, a minimalist WordPress Theme for art portfolios, so that artists can save money and have more control over their sites. The theme is built on &lt;a href=&quot;https://underscores.me/&quot;&gt;Underscores&lt;/a&gt;, a bare-bones starter template, and uses WordPress’s built in &lt;a href=&quot;https://artisansweb.net/add-masonry-grid-layout-wordpress/&quot;&gt;Masonry Grid&lt;/a&gt; to organize art on the homepage.&lt;/p&gt;
+
+&lt;p&gt;To use the theme to its full potential, I recommend the following plugins:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wordpress.org/plugins/easy-add-thumbnail/&quot;&gt;Easy Add Thumbnail&lt;/a&gt; - Sets the featured image of each post to the first image automatically.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wordpress.org/plugins/olympus-google-fonts/&quot;&gt;Fonts Plugin&lt;/a&gt; - Easily set fonts using Google Fonts.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wordpress.org/plugins/simple-custom-post-order/&quot;&gt;Simple Custom Post Order&lt;/a&gt; - Drag and drop posts to desired order.&lt;/p&gt;
+
+&lt;p&gt;Also, be sure to remove all default widgets through Appearance &amp;gt; Widgets.&lt;/p&gt;
+
+&lt;p&gt;For support, please contact me through the contact form on &lt;a href=&quot;https://prismoscope.com&quot;&gt;prismoscope.com&lt;/a&gt;.&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Wordpress" /><summary type="html">Loading...</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/jesstheme.jpg" /><media:content medium="image" url="https://harryherskowitz.com/jesstheme.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">HTML Form Submit with Google reCAPTCHA, Vanilla JS and PHP</title><link href="https://harryherskowitz.com/2020/12/09/html-form-recaptcha.html" rel="alternate" type="text/html" title="HTML Form Submit with Google reCAPTCHA, Vanilla JS and PHP" /><published>2020-12-09T00:00:00-05:00</published><updated>2020-12-09T00:00:00-05:00</updated><id>https://harryherskowitz.com/2020/12/09/html-form-recaptcha</id><content type="html" xml:base="https://harryherskowitz.com/2020/12/09/html-form-recaptcha.html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/recaptcha.jpg&quot; alt=&quot;recaptcha&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finding simple answers for submitting custom HTML forms are hard to find, especially when adding in Google reCAPTCHA and avoiding jQuery. The following code is a result of hours of hunting Stack Overflow for answers to two main problems: &lt;a href=&quot;https://visdup.blogspot.com/2019/03/how-to-submit-html-form-without.html&quot;&gt;How to submit an HTML form without AJAX&lt;/a&gt; and &lt;a href=&quot;https://stackoverflow.com/questions/44021400/how-to-run-recaptcha-only-if-html5-validation-has-passed/44026198#44026198&quot;&gt;how to prevent Google reCAPTCHA from overriding HTML5 form validation&lt;/a&gt;. The first required using a hidden iFrame as the form target, and the second involved placing the ReCAPTCHA attributes in a hidden div rather than in the submit button.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;!-- form --&amp;gt;
+&amp;lt;iframe name=&quot;hiddenFrame&quot; width=&quot;0&quot; height=&quot;0&quot; border=&quot;0&quot; style=&quot;display: none;&quot;&amp;gt;&amp;lt;/iframe&amp;gt;
+&amp;lt;form action=&quot;sendEmail.php&quot; name=&quot;contactForm&quot; id=&quot;contactForm&quot; method=&quot;POST&quot; target=&quot;hiddenFrame&quot;&amp;gt;
+    &amp;lt;div class=&quot;form-field&quot;&amp;gt;
+      &amp;lt;input name=&quot;contactName&quot; type=&quot;text&quot; id=&quot;contactName&quot; placeholder=&quot;Name&quot; value=&quot;&quot; minlength=&quot;2&quot; required /&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+    &amp;lt;div class=&quot;form-field&quot;&amp;gt;
+      &amp;lt;input name=&quot;contactEmail&quot; type=&quot;email&quot; id=&quot;contactEmail&quot; placeholder=&quot;Email&quot; value=&quot;&quot; required /&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+    &amp;lt;div class=&quot;form-field&quot;&amp;gt;
+      &amp;lt;input name=&quot;contactSubject&quot; type=&quot;text&quot; id=&quot;contactSubject&quot; placeholder=&quot;Subject&quot; value=&quot;&quot; /&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+    &amp;lt;div class=&quot;form-field&quot;&amp;gt;
+      &amp;lt;textarea name=&quot;contactMessage&quot; id=&quot;contactMessage&quot; placeholder=&quot;Message&quot; rows=&quot;10&quot; cols=&quot;50&quot; minlength=&quot;20&quot;
+        required&amp;gt;&amp;lt;/textarea&amp;gt;
+    &amp;lt;/div&amp;gt;
+
+    &amp;lt;div id=&apos;recaptcha&apos; class=&quot;g-recaptcha&quot;
+    data-sitekey=&quot;YOURKEYHERE&quot;
+    data-callback=&quot;onCompleted&quot;
+    data-size=&quot;invisible&quot;&amp;gt;&amp;lt;/div&amp;gt;
+
+    &amp;lt;div class=&quot;form-field&quot;&amp;gt;
+      &amp;lt;button class=&quot;button stroke submitform&quot;&amp;gt;Submit&amp;lt;/button&amp;gt;
+&amp;lt;/form&amp;gt;
+
+&amp;lt;!-- contact-success --&amp;gt;
+&amp;lt;div id=&quot;message-success&quot;&amp;gt;
+    &amp;lt;i class=&quot;fa fa-check&quot;&amp;gt;&amp;lt;/i&amp;gt;Your message was sent, thank you!&amp;lt;br /&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;script src=&quot;https://www.google.com/recaptcha/api.js&quot; async defer&amp;gt;
+&amp;lt;/script&amp;gt;
+  &amp;lt;script&amp;gt;
+      var form = document.getElementById(&quot;contactForm&quot;)
+      form.addEventListener(&quot;submit&quot;, function(event) {
+        console.log(&apos;form submitted.&apos;);
+
+        if (!grecaptcha.getResponse()) {
+            console.log(&apos;captcha not yet completed.&apos;);
+
+            event.preventDefault(); //prevent form submit
+            grecaptcha.execute();
+        } else {
+            console.log(&apos;form really submitted.&apos;);
+        }
+    });
+
+    onCompleted = function() {
+        console.log(&apos;captcha completed.&apos;);
+        form.submit();
+        document.getElementById(&quot;message-success&quot;).style.display = &quot;flex&quot;
+    }
+&amp;lt;/script&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is the sendEmail.php file:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;?php
+
+// Replace this with your own email address
+$siteOwnersEmail = &apos;YOUR_EMAIL&apos;;
+
+if ($_POST) {
+
+	$name = trim(stripslashes($_POST[&apos;contactName&apos;]));
+	$email = trim(stripslashes($_POST[&apos;contactEmail&apos;]));
+	$subject = trim(stripslashes($_POST[&apos;contactSubject&apos;]));
+	$contact_message = trim(stripslashes($_POST[&apos;contactMessage&apos;]));
+
+	// Check Name
+	if (strlen($name) &amp;lt; 2) {
+		$error[&apos;name&apos;] = &quot;Please enter your name.&quot;;
+	}
+	// Check Email
+	if (!preg_match(&apos;/^[a-z0-9&amp;amp;\&apos;\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is&apos;, $email)) {
+		$error[&apos;email&apos;] = &quot;Please enter a valid email address.&quot;;
+	}
+	// Check Message
+	if (strlen($contact_message) &amp;lt; 15) {
+		$error[&apos;message&apos;] = &quot;Please enter your message. It should have at least 15 characters.&quot;;
+	}
+	// Subject
+	if ($subject == &apos;&apos;) {
+		$subject = &quot;Contact Form Submission&quot;;
+	}
+
+	// Set Message
+	$message .= &quot;Email from: &quot; . $name . &quot;&amp;lt;br /&amp;gt;&quot;;
+	$message .= &quot;Email address: &quot; . $email . &quot;&amp;lt;br /&amp;gt;&quot;;
+	$message .= &quot;Message: &amp;lt;br /&amp;gt;&quot;;
+	$message .= $contact_message;
+	$message .= &quot;&amp;lt;br /&amp;gt; ----- &amp;lt;br /&amp;gt; This email was sent from your site&apos;s contact form. &amp;lt;br /&amp;gt;&quot;;
+
+	// Set From: header
+	$from =  $name . &quot; &amp;lt;&quot; . $email . &quot;&amp;gt;&quot;;
+
+	// Email Headers
+	$headers = &quot;From: &quot; . $from . &quot;\r\n&quot;;
+	$headers .= &quot;Reply-To: &quot; . $email . &quot;\r\n&quot;;
+	$headers .= &quot;MIME-Version: 1.0\r\n&quot;;
+	$headers .= &quot;Content-Type: text/html; charset=ISO-8859-1\r\n&quot;;
+
+	// reCAPTCHA validation
+	if (isset($_POST[&apos;g-recaptcha-response&apos;]) &amp;amp;&amp;amp; !empty($_POST[&apos;g-recaptcha-response&apos;])) {
+
+		// Google secret API
+		$secretAPIkey = &apos;YOUR_SECRET_KEY&apos;;
+
+		// reCAPTCHA response verification
+		$verifyResponse = file_get_contents(&apos;https://www.google.com/recaptcha/api/siteverify?secret=&apos; . $secretAPIkey . &apos;&amp;amp;response=&apos; . $_POST[&apos;g-recaptcha-response&apos;]);
+
+		// Decode JSON data
+		$response = json_decode($verifyResponse);
+
+		if ($response-&amp;gt;success) {
+
+			if (!$error) {
+
+				ini_set(&quot;sendmail_from&quot;, $siteOwnersEmail); // for windows server
+				$mail = mail($siteOwnersEmail, $subject, $message, $headers);
+
+				if ($mail) {
+					echo &quot;OK&quot;;
+				} else {
+					echo &quot;Something went wrong. Please try again.&quot;;
+				}
+			} # end if - no validation error
+
+			else {
+
+				$response = (isset($error[&apos;name&apos;])) ? $error[&apos;name&apos;] . &quot;&amp;lt;br /&amp;gt; \n&quot; : null;
+				$response .= (isset($error[&apos;email&apos;])) ? $error[&apos;email&apos;] . &quot;&amp;lt;br /&amp;gt; \n&quot; : null;
+				$response .= (isset($error[&apos;message&apos;])) ? $error[&apos;message&apos;] . &quot;&amp;lt;br /&amp;gt;&quot; : null;
+
+				echo $response;
+			} # end if - there was a validation error
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Harry Herskowitz</name></author><category term="HTML" /><category term="PHP" /><category term="JS" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/recaptchacover.jpg" /><media:content medium="image" url="https://harryherskowitz.com/recaptchacover.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Connecting Local Users with Geolocation in React</title><link href="https://harryherskowitz.com/2020/09/19/finding-local-users-with-geolocation-in-react.html" rel="alternate" type="text/html" title="Connecting Local Users with Geolocation in React" /><published>2020-09-19T00:00:00-04:00</published><updated>2020-09-19T00:00:00-04:00</updated><id>https://harryherskowitz.com/2020/09/19/finding-local-users-with-geolocation-in-react</id><content type="html" xml:base="https://harryherskowitz.com/2020/09/19/finding-local-users-with-geolocation-in-react.html">&lt;p&gt;I am currently working on a React app that helps content creators find and collaborate with other creators in their area. Thankfully, the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API&quot;&gt;Geolocation Web API&lt;/a&gt; makes getting a user’s coordinates simple. I will walk through how I used this API to update a user’s coordinates at login, and share a useful function I found for filtering users by distance.&lt;/p&gt;
+
+&lt;p&gt;First, I added the following code within the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useEffect&lt;/code&gt; hook in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;App.js&lt;/code&gt; to prompt the user to allow location services:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (&apos;geolocation&apos; in navigator) {
+  console.log(&apos;geolocation supported&apos;)
+} else {
+  alert(&apos;no geolocation support&apos;)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next, I called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getCurrentPosition&lt;/code&gt; after the login action and dispatched the latitude and longitude to my &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;geolocate&lt;/code&gt; action:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dispatch(login(email, password)).then(() =&amp;gt; {
+  navigator.geolocation.getCurrentPosition((position) =&amp;gt; {
+    dispatch(geolocate(
+        position.coords.latitude,
+        position.coords.longitude
+    ))
+  })
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;geolocate&lt;/code&gt; action looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//Update Geolocation
+export const geolocate = (latitude, longitude) =&amp;gt; async (dispatch) =&amp;gt; {
+  try {
+    const body = {
+      latitude,
+      longitude
+    }
+    await api.post(&apos;/users/geolocation&apos;, body)
+  } catch (err) {
+    const errors = err.response.data.errors
+    if (errors) {
+      errors.forEach((error) =&amp;gt; dispatch(setAlert(error.msg, &apos;danger&apos;)))
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is my &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; route (Express.js):&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// @route    POST api/users/geolocation
+// @desc     update user geolocation
+// @access   Public
+
+router.post(&apos;/geolocation&apos;, [auth], async (req, res) =&amp;gt; {
+  try {
+    const user = await User.findById(req.user.id).select(&apos;-password&apos;)
+    user.latitude = req.body.latitude
+    user.longitude = req.body.longitude
+    await user.save()
+    res.json({ msg: &apos;Location Saved&apos; })
+  } catch (error) {
+    console.error(error.message)
+    res.status(500).send(&apos;Server error&apos;)
+  }
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I made sure to add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;latitude&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;longitude&lt;/code&gt; to my user model, and voila! I had the latest location of my users.&lt;/p&gt;
+
+&lt;p&gt;Now, I wanted to only show profiles within 30 km of the current user. I came across this helpful function which found the distance between two coordinate pairs:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function getDistance(lat1, lon1, lat2, lon2) {
+  var R = 6371 // Radius of the earth in km
+  var dLat = deg2rad(lat2 - lat1) // deg2rad below
+  var dLon = deg2rad(lon2 - lon1)
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2)
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  var d = R * c // Distance in km
+  return d
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI / 180)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;One &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;filter&lt;/code&gt; later, and my task was complete:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{profiles.filter(
+    (profile) =&amp;gt;
+    getDistance(
+        latitude,
+        longitude,
+        profile.user.latitude,
+        profile.user.longitude
+    ) &amp;lt; 30
+).length &amp;gt; 0 ? (
+    profiles.map((profile) =&amp;gt; (
+        &amp;lt;ProfileItem key={profile._id} profile={profile} /&amp;gt;
+ 	))
+ ) : (
+ 	&amp;lt;h4&amp;gt;No profiles found...&amp;lt;/h4&amp;gt;
+ )}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Harry Herskowitz</name></author><category term="React" /><category term="Node" /><category term="JS" /><summary type="html">I am currently working on a React app that helps content creators find and collaborate with other creators in their area. Thankfully, the Geolocation Web API makes getting a user’s coordinates simple. I will walk through how I used this API to update a user’s coordinates at login, and share a useful function I found for filtering users by distance.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/geolocation.jpg" /><media:content medium="image" url="https://harryherskowitz.com/geolocation.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Archiving the Life of Secondhand Textiles</title><link href="https://harryherskowitz.com/2020/09/04/thread-threads.html" rel="alternate" type="text/html" title="Archiving the Life of Secondhand Textiles" /><published>2020-09-04T00:00:00-04:00</published><updated>2020-09-04T00:00:00-04:00</updated><id>https://harryherskowitz.com/2020/09/04/thread-threads</id><content type="html" xml:base="https://harryherskowitz.com/2020/09/04/thread-threads.html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/threadthreads.jpg&quot; alt=&quot;threadthreads screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Earlier this year I was approached by Abby Hollis, founder of the startup &lt;a href=&quot;https://threadthreads.com/&quot;&gt;Threads Threads&lt;/a&gt;, to create a web application that archives the stories of secondhand clothing and textiles as they are passed on to new owners.&lt;/p&gt;
+
+&lt;p&gt;The app works like this: Each item has a tag sewn on with a alphanumeric code, which when entered into the site returns each owner’s entry about the garment. The new owner now has a greater connection to the item and they can share their own stories before passing it along again.&lt;/p&gt;
+
+&lt;p&gt;As someone who loves thrifting, I was as excited about the idea as she was. I got on board with the project as the sole web developer.&lt;/p&gt;
+
+&lt;p&gt;Being a one man dev team, I had a lot of decisions to make. Since the site was a basic &lt;a href=&quot;https://medium.com/@thorntonbrenden/whats-a-crud-app-e5a29cce03b5&quot;&gt;CRUD&lt;/a&gt; application with no realtime features, I felt that using &lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; would be overengineering. I made the decision to build with &lt;a href=&quot;https://rubyonrails.org/&quot;&gt;Ruby On Rails&lt;/a&gt; . Rails is a popular framework for building prototypes for startups because of its fast development and opinionated organization.&lt;/p&gt;
+
+&lt;p&gt;I was able to deploy the prototype after just two months of development. The app is fully functioning with users, threads, and an admin panel for managing data. The app can be accessed here: &lt;a href=&quot;https://threadthreads.com/&quot;&gt;https://threadthreads.herokuapp.com/&lt;/a&gt;. Use example code &lt;strong&gt;12345&lt;/strong&gt; to see how it works.&lt;/p&gt;
+
+&lt;p&gt;It had a great experience building this application and am excited for the future of Thread Threads. Follow them on &lt;a href=&quot;https://www.instagram.com/mythreadthreads/&quot;&gt;Instagram&lt;/a&gt; to keep up with their progress.&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Rails" /><category term="Ruby" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/threadthreadscover.jpg" /><media:content medium="image" url="https://harryherskowitz.com/threadthreadscover.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Geolocation for Creative Collaboration</title><link href="https://harryherskowitz.com/2020/09/04/closecreate.html" rel="alternate" type="text/html" title="Geolocation for Creative Collaboration" /><published>2020-09-04T00:00:00-04:00</published><updated>2020-09-04T00:00:00-04:00</updated><id>https://harryherskowitz.com/2020/09/04/closecreate</id><content type="html" xml:base="https://harryherskowitz.com/2020/09/04/closecreate.html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/closecreate1.jpeg&quot; alt=&quot;closecreate screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Today I am happy to release &lt;a href=&quot;https://github.com/roldyclark/closecreate&quot;&gt;Closecreate&lt;/a&gt;, an open source web app for bringing together creative collaborators. The app allows users to create a profile which includes a picture, location, bio, and social media links to showcase their work. They can then scroll through nearby profiles to match with in a tinder-like fashion. Once two users match they can instant message each other and discuss future collaborations.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/closecreate2.jpeg&quot; alt=&quot;closecreate screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The application is built with &lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; on the client side, &lt;a href=&quot;https://expressjs.com/&quot;&gt;Express&lt;/a&gt; (&lt;a href=&quot;https://nodejs.org/en/about/&quot;&gt;Node&lt;/a&gt;) on the server side, and a &lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt; database - also known as the &lt;a href=&quot;https://www.mongodb.com/mern-stack&quot;&gt;MERN Stack&lt;/a&gt;. Images are uploaded and served through &lt;a href=&quot;https://aws.amazon.com/s3/&quot;&gt;AWS S3&lt;/a&gt;. Each user’s current location is obtained at login through the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API&quot;&gt;Geolocation API&lt;/a&gt; and profiles within 30km are displayed. The app is styled with &lt;a href=&quot;https://www.gethalfmoon.com/docs/introduction/&quot;&gt;Halfmoon&lt;/a&gt;, a bootstrap alternative with built-in darkmode. &lt;a href=&quot;https://socket.io/&quot;&gt;Socket.io&lt;/a&gt; is used in the chat component for realtime messaging.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/closecreate3.jpeg&quot; alt=&quot;closecreate screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am currently hosting the app live on Heroku at &lt;a href=&quot;https://www.closecreate.com&quot;&gt;closecreate.com&lt;/a&gt;. I’d love to see the creative community get use out of it! I also hope the open source repo is taken advantage of as this code can be reused to create all kinds of interesting matchmaking apps.&lt;/p&gt;
+
+&lt;p&gt;UPDATE: I am no longer hosting this app, but the code will stay a available on my &lt;a href=&quot;https://github.com/roldyclark/closecreate&quot;&gt;Github&lt;/a&gt;. I am currently working on an updated concept for Closecreate. Stay tuned.&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="React" /><category term="Node" /><category term="JS" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/closecreate2.jpeg" /><media:content medium="image" url="https://harryherskowitz.com/closecreate2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Switching to Redux Hooks</title><link href="https://harryherskowitz.com/2020/08/23/switching-to-redux-hooks.html" rel="alternate" type="text/html" title="Switching to Redux Hooks" /><published>2020-08-23T00:00:00-04:00</published><updated>2020-08-23T00:00:00-04:00</updated><id>https://harryherskowitz.com/2020/08/23/switching-to-redux-hooks</id><content type="html" xml:base="https://harryherskowitz.com/2020/08/23/switching-to-redux-hooks.html">&lt;p&gt;React Hooks are great. They are clean, easy to read, and save time typing boilerplate. However, they are very new, and many popular tutorials have yet to fully adopt them - particularly in Redux. In this post I will be taking a component from Brad Traversy’s &lt;a href=&quot;https://www.udemy.com/course/mern-stack-front-to-back&quot;&gt;MERN Stack Front To Back&lt;/a&gt; tutorial and converting it to use Redux hooks.&lt;/p&gt;
+
+&lt;p&gt;Below is the Posts component. We will be using hooks to access the state of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; and to dispatch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getPosts&lt;/code&gt; without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connect&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
+import PropTypes from &apos;prop-types&apos;
+import { connect } from &apos;react-redux&apos;
+import PostItem from &apos;./PostItem&apos;
+import PostForm from &apos;./PostForm&apos;
+import { getPosts } from &apos;../../actions/post&apos;
+
+const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
+  useEffect(() =&amp;gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &amp;lt;Fragment&amp;gt;
+      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
+      &amp;lt;p className=&quot;lead&quot;&amp;gt;
+        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
+      &amp;lt;/p&amp;gt;
+      &amp;lt;PostForm /&amp;gt;
+      &amp;lt;div className=&quot;posts&quot;&amp;gt;
+        {posts.map((post) =&amp;gt; (
+          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
+        ))}
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/Fragment&amp;gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) =&amp;gt; ({
+  post: state.post
+})
+
+export default connect(mapStateToProps, { getPosts })(Posts)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;First, we can replace  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import { connect } from &apos;react-redux&apos;&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import { useSelector, useDispatch } from &apos;react-redux&apos;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
+import PropTypes from &apos;prop-types&apos;
+import { useSelector, useDispatch } from &apos;react-redux&apos;
+import PostItem from &apos;./PostItem&apos;
+import PostForm from &apos;./PostForm&apos;
+import { getPosts } from &apos;../../actions/post&apos;
+
+const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
+  useEffect(() =&amp;gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &amp;lt;Fragment&amp;gt;
+      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
+      &amp;lt;p className=&quot;lead&quot;&amp;gt;
+        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
+      &amp;lt;/p&amp;gt;
+      &amp;lt;PostForm /&amp;gt;
+      &amp;lt;div className=&quot;posts&quot;&amp;gt;
+        {posts.map((post) =&amp;gt; (
+          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
+        ))}
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/Fragment&amp;gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) =&amp;gt; ({
+  post: state.post
+})
+
+export default connect(mapStateToProps, { getPosts })(Posts)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next, delete &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connect(mapStateToprops, {getPosts})&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const mapStateToProps&lt;/code&gt; block.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
+import PropTypes from &apos;prop-types&apos;
+import { useSelector, useDispatch } from &apos;react-redux&apos;
+import PostItem from &apos;./PostItem&apos;
+import PostForm from &apos;./PostForm&apos;
+import { getPosts } from &apos;../../actions/post&apos;
+
+const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
+  useEffect(() =&amp;gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &amp;lt;Fragment&amp;gt;
+      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
+      &amp;lt;p className=&quot;lead&quot;&amp;gt;
+        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
+      &amp;lt;/p&amp;gt;
+      &amp;lt;PostForm /&amp;gt;
+      &amp;lt;div className=&quot;posts&quot;&amp;gt;
+        {posts.map((post) =&amp;gt; (
+          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
+        ))}
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/Fragment&amp;gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+export default Posts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we’re ready for the hooks. First is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useSelector&lt;/code&gt; hook, which will get &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;posts&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state.post&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
+import PropTypes from &apos;prop-types&apos;
+import { useSelector, useDispatch } from &apos;react-redux&apos;
+import PostItem from &apos;./PostItem&apos;
+import PostForm from &apos;./PostForm&apos;
+import { getPosts } from &apos;../../actions/post&apos;
+
+const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
+
+  const { posts } = useSelector(state =&amp;gt; state.post)
+
+  useEffect(() =&amp;gt; {
+    getPosts()
+  }, [getPosts])
+
+  return (
+    &amp;lt;Fragment&amp;gt;
+      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
+      &amp;lt;p className=&quot;lead&quot;&amp;gt;
+        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
+      &amp;lt;/p&amp;gt;
+      &amp;lt;PostForm /&amp;gt;
+      &amp;lt;div className=&quot;posts&quot;&amp;gt;
+        {posts.map((post) =&amp;gt; (
+          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
+        ))}
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/Fragment&amp;gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+export default Posts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After this we will add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useDispatch&lt;/code&gt; hook, which will allow us to run our function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getPosts&lt;/code&gt; by taking it as an argument like so: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dispatch(getPosts())&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
+import PropTypes from &apos;prop-types&apos;
+import { useSelector, useDispatch } from &apos;react-redux&apos;
+import PostItem from &apos;./PostItem&apos;
+import PostForm from &apos;./PostForm&apos;
+import { getPosts } from &apos;../../actions/post&apos;
+
+const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
+
+  const { posts } = useSelector(state =&amp;gt; state.post)
+
+  const dispatch = useDispatch()
+
+  useEffect(() =&amp;gt; {
+    dispatch(getPosts())
+  }, [getPosts])
+
+  return (
+    &amp;lt;Fragment&amp;gt;
+      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
+      &amp;lt;p className=&quot;lead&quot;&amp;gt;
+        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
+      &amp;lt;/p&amp;gt;
+      &amp;lt;PostForm /&amp;gt;
+      &amp;lt;div className=&quot;posts&quot;&amp;gt;
+        {posts.map((post) =&amp;gt; (
+          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
+        ))}
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/Fragment&amp;gt;
+  )
+}
+
+Posts.propTypes = {
+  getPosts: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+}
+
+export default Posts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can now remove the props from the Posts component, as well as PropTypes — since there aren’t any props to type check. And you’re done! Try it out for yourself.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
+import { useSelector, useDispatch } from &apos;react-redux&apos;
+import PostItem from &apos;./PostItem&apos;
+import PostForm from &apos;./PostForm&apos;
+import { getPosts } from &apos;../../actions/post&apos;
+
+const Posts = () =&amp;gt; {
+
+  const { posts } = useSelector(state =&amp;gt; state.post)
+
+  const dispatch = useDispatch()
+
+  useEffect(() =&amp;gt; {
+    dispatch(getPosts())
+  }, [getPosts])
+
+  return (
+    &amp;lt;Fragment&amp;gt;
+      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
+      &amp;lt;p className=&quot;lead&quot;&amp;gt;
+        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
+      &amp;lt;/p&amp;gt;
+      &amp;lt;PostForm /&amp;gt;
+      &amp;lt;div className=&quot;posts&quot;&amp;gt;
+        {posts.map((post) =&amp;gt; (
+          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
+        ))}
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/Fragment&amp;gt;
+  )
+}
+
+export default Posts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note: If you use any data that isn’t from state, you will still need to pass that into props.&lt;/p&gt;
+
+&lt;p&gt;To me, this code looks much more clean. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connect&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mapStateToProps&lt;/code&gt; syntax is cumbersome to type and ineloquent to read. Thank you Hooks!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="React" /><category term="Javascript" /><category term="NodeJS" /><summary type="html">React Hooks are great. They are clean, easy to read, and save time typing boilerplate. However, they are very new, and many popular tutorials have yet to fully adopt them - particularly in Redux. In this post I will be taking a component from Brad Traversy’s MERN Stack Front To Back tutorial and converting it to use Redux hooks.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/hooks.jpg" /><media:content medium="image" url="https://harryherskowitz.com/hooks.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Where Video Meets Code</title><link href="https://harryherskowitz.com/2020/02/26/perennial.html" rel="alternate" type="text/html" title="Where Video Meets Code" /><published>2020-02-26T00:00:00-05:00</published><updated>2020-02-26T00:00:00-05:00</updated><id>https://harryherskowitz.com/2020/02/26/perennial</id><content type="html" xml:base="https://harryherskowitz.com/2020/02/26/perennial.html">&lt;div style=&quot;padding:56.25% 0 0 0;position:relative;&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/214118670?h=bc60f79d0f&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;script src=&quot;https://player.vimeo.com/api/player.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;I started college as a Cinema major. I’ve been making films since I was 10 years old, so I was excited to go to film school and learn the industry. However, after taking a computer science course, I found myself just as excited about coding. As a technical person it came easy to me. I decided to create an interdisciplinary major that encompassed both film making and coding. With the internet becoming the most popular medium for video, I saw new possibilities in the intersection of film and code.&lt;/p&gt;
+
+&lt;p&gt;The most obvious intersection is in Web Design. Websites can display video in a customized layout of textual and visual content. My music blog Tapedrop.com is an example of this. But in the last year of my studies, I wanted to go further. So I asked the question: How can code be used to program the content of the video itself?&lt;/p&gt;
+
+&lt;p&gt;That’s when I created &lt;a href=&quot;https://github.com/roldyclark/Perennial&quot;&gt;Perennial&lt;/a&gt;. Perennial is a Mac application for making Variable Audio Movies. I came up with the idea after watching The Neverending Story. It’s a great movie, but it had one problem - it ended! I began thinking about what an actual neverending movie would look like. It could just be a story that loops perfectly, maybe by involving time travel or parallel dimensions. This would be cool and all, but it would just be the same movie again.&lt;/p&gt;
+
+&lt;p&gt;I wanted to write code that took individual scenes and added variables, in this case the audio, making each rewatch entirely unique. Thanks to permutation math, just a small amount of variables could result in a massive amount of unique combinations. If done right, a filmmaker could make a film with a seemingly neverending timeline.&lt;/p&gt;
+
+&lt;p&gt;For my example I made a film about a guy waking up everyday and doing various things around his apartment. With each loop he listened to a different radio station, played a different song on his piano, and read a different letter he’d received in the mail. These variables gave the illusion that he was actually living in the computer screen, going through variations of his daily routine forever.&lt;/p&gt;
+
+&lt;p&gt;I coded the program in JavaScript because I originally wanted it to be a web app. I soon realized that I couldn’t afford to have users upload their videos to my server, and that web apps can’t reference a users local files for obvious security reasons. Luckily Electron makes converting a web app to desktop easy. The Perennial app is available to all Mac users &lt;a href=&quot;https://github.com/roldyclark/Perennial/releases/tag/v1.0&quot;&gt;here&lt;/a&gt;. Download it to start making variable audio movies today! I would love to see this technology be used to its full potential.&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Electron" /><category term="Javascript" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/perennial.jpg" /><media:content medium="image" url="https://harryherskowitz.com/perennial.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
