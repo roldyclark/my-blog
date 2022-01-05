@@ -12,7 +12,7 @@
 
   <!-- Favicon and title -->
   <link rel="icon" href="/fav.png" />
-  <title>Firebase Auth with Capacitor 3</title>
+  <title>How I Built the Tapedrop app</title>
 
   <!-- Halfmoon CSS -->
   <link
@@ -93,8 +93,14 @@
       <!-- Content wrapper start -->
       <div class="content-wrapper">
         <div id="post">
-  <div class="post-title text-center"><h1>Firebase Auth with Capacitor 3</h1></div>
+  <div class="post-title text-center"><h1>How I Built the Tapedrop app</h1></div>
   <div class="d-flex justify-content-center mb-20">
+    
+    <a
+      class="post-categories m-10"
+      href="/category/svelte/index.html"
+      >Svelte</a
+    >
     
     <a
       class="post-categories m-10"
@@ -114,26 +120,23 @@
       >JS</a
     >
     
-    <div class="post-date m-10">August 23, 2021</div>
+    <div class="post-date m-10">January 05, 2022</div>
   </div>
-  <div class="body m-auto"><p>I recently built my first native iOS app with Svelte, Capacitor, and Firebase (coming soon!). The stack is a breeze to work with, but I ran into a snag getting Firebase to work in the iOS builds. Non of the firebase calls were returning. Luckily, a friendly redditor pointed out the problem: Firebase auth needs to be initialized manually on iOS, or else signInWithPopUp and signInWithRedirect will hold things up - even when using a capacitor plugin that authorizes natively like <a href="https://github.com/robingenz/capacitor-firebase-authentication">capacitor-firebase-authentication</a>. So here’s my code to manually authorize on iOS:</p>
+  <div class="body m-auto"><p><img src="/assets/images/posts/tapedrop-app.jpg" alt="app screenshot" /></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function whichAuth() {
-  let auth
-  if (Capacitor.isNativePlatform()) {
-    auth = initializeAuth(app, {
-      persistence: indexedDBLocalPersistence
-    })
-  } else {
-    auth = getAuth()
-  }
-  return auth
-}
+<p>I had the idea for the <a href="https://tapedrop.com/2022/01/01/tapedrop-app.html">Tapedrop app</a> years ago. At the time, I knew little more than basic HTML, CSS, and JS. Diving into native app development was daunting, and still is. Luckily, web technology has advanced to the point where making an iOS app is as simple as adding <a href="https://capacitorjs.com/">Capacitor</a> to a web app. With <a href="https://svelte.dev/">Svelte</a> as my frontend framework and <a href="https://firebase.google.com/">Firebase</a> on the backend, building this app was a joy. In this post I will go over my experience with this stack.</p>
 
-export const auth = whichAuth()
-</code></pre></div></div>
+<p>I’d been eager to try <a href="https://svelte.dev/">Svelte</a> since it offered reactivity, while keeping the simplicity of plain HTML and JS. I can’t speak for Vue or Angular, but I have plenty of experience wrestling with React. JSX quickly becomes a tangled mess, and writing logic within a component is ugly and limited. Why can you only use ternary operators for inline conditions? Svelte’s logic operators are fool proof and keep the HTML looking like HTML. Just take 5 minutes to go through the examples <a href="https://svelte.dev/tutorial/if-blocks">here</a> and you will be a convert. The dealbreaker for me though is Svelte’s built in <a href="https://svelte.dev/tutorial/writable-stores">stores</a>, which make state management simple. It’s even more painful to use Redux or React Context at work now that I’ve seen the light.</p>
 
-<p>With this code, my app is working flawlessly - and development has been a joy!</p>
+<p>On the backend I used <a href="https://firebase.google.com/">Firebase</a> for authorization, data and image storage. Firebase cut my dev time in half. However, there were a few hangups. I had some issues with authorization in iOS, which I wrote about <a href="http://harryherskowitz.com/2021/08/23/firebase-capacitor.html">here</a> and <a href="https://github.com/firebase/firebase-js-sdk/issues/5553#event-5412439549">here</a>. Also, geolocation was a challenge since queries are one dimensional. I used Geohashes to query nearby artists, along with latitude and longitude to filter out outliers. You can read more about this approach <a href="https://firebase.google.com/docs/firestore/solutions/geoqueries">here</a>.</p>
+
+<p>Converting my web app for iOS with Capacitor was smooth, and didn’t require me to build it in a specific framework like React Native or Ionic would have. With Capacitor, you simply call modules within plain JS that will run native functionality when available. For example, Capacitor’s <a href="https://capacitorjs.com/docs/apis/geolocation">Geolocation</a> module will use a device’s GPS within a Native app, and use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API">Geolocation Web API</a> within a browser.</p>
+
+<p>Building the iOS app is done through a single CLI command. The difficult part is configuration. Apple requires a lot of configuration through Xcode and their developer program, and the documentation isn’t great. It was also a headache to submit to the App Store, but their feedback was quick and concise. It took me only two attempts to get it approved, each review taking about 3 days.</p>
+
+<p>This is the only iOS app I have made, so I don’t have other tech stacks to compare it to. But, if you are looking for a framework-agnostic way to build a cross-platform app, I can highly recommend Capacitor. Firebase has its pains, but not having to code my own backend makes up for it - also it’s free. So is the frontend, which I host on Github Pages. The only money going into this app is Apple’s $100 developer fee.</p>
+
+<p>So, for anyone hesitant to dive into the native app world, I hope this gives you the reassurance to go for it. You got this!</p>
 </div>
   <hr />
 <div id="author" class="d-flex align-items-center justify-content-center">
@@ -154,12 +157,12 @@ export const auth = whichAuth()
 </div>
  <div id="recommended" class="d-flex flex-wrap justify-content-center m-auto">
    
-  <a href="/2022/01/05/tapedrop-app.html" class="postcard-sm">
+  <a href="/2021/08/23/firebase-capacitor.html" class="postcard-sm">
     <div class="card shadow-sm w-md-350 p-0 h-400">
       <div class="h-half overflow-hidden fill">
         <img
           class="image w-full"
-          src="/assets/images/posts/tapedrop-app-card.jpg"
+          src="/assets/images/posts/firebase.jpg"
           class="img-fluid rounded-top"
         />
       </div>
@@ -168,9 +171,9 @@ export const auth = whichAuth()
         src="/assets/images/avatars/roldy.png"
       />
       <div class="h-half overflow-hidden">
-        <div class="post-categories">SvelteFirebaseCapacitorJS</div>
-        <div class="post-title">How I Built the Tapedrop app</div>
-        <div class="post-date">January 05, 2022</div>
+        <div class="post-categories">FirebaseCapacitorJS</div>
+        <div class="post-title">Firebase Auth with Capacitor 3</div>
+        <div class="post-date">August 23, 2021</div>
       </div>
     </div>
   </a>

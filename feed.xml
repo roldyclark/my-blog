@@ -1,10 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://harryherskowitz.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://harryherskowitz.com/" rel="alternate" type="text/html" /><updated>2021-09-21T10:35:21-04:00</updated><id>https://harryherskowitz.com/feed.xml</id><title type="html">Halfmoon-Jekyll</title><subtitle>Jekyll Theme made with Halfmoon</subtitle><entry><title type="html">Halfmoon-Jekyll</title><link href="https://harryherskowitz.com/2021/08/23/halfmoon-jekyll.html" rel="alternate" type="text/html" title="Halfmoon-Jekyll" /><published>2021-08-23T00:00:00-04:00</published><updated>2021-08-23T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/08/23/halfmoon-jekyll</id><content type="html" xml:base="https://harryherskowitz.com/2021/08/23/halfmoon-jekyll.html">&lt;p&gt;Welcome to Halfmoon-Jekyll! I made this &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; theme using the &lt;a href=&quot;https://www.gethalfmoon.com/docs/introduction/&quot;&gt;Halfmoon&lt;/a&gt; front-end framework. It supports categories, pagination, multiple authors, and dark mode.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://harryherskowitz.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://harryherskowitz.com/" rel="alternate" type="text/html" /><updated>2022-01-05T15:30:46-05:00</updated><id>https://harryherskowitz.com/feed.xml</id><title type="html">Halfmoon-Jekyll</title><subtitle>Jekyll Theme made with Halfmoon</subtitle><entry><title type="html">How I Built the Tapedrop app</title><link href="https://harryherskowitz.com/2022/01/05/tapedrop-app.html" rel="alternate" type="text/html" title="How I Built the Tapedrop app" /><published>2022-01-05T00:00:00-05:00</published><updated>2022-01-05T00:00:00-05:00</updated><id>https://harryherskowitz.com/2022/01/05/tapedrop-app</id><content type="html" xml:base="https://harryherskowitz.com/2022/01/05/tapedrop-app.html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/tapedrop-app.jpg&quot; alt=&quot;app screenshot&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I made Halfmoon-Jekyll in order to move my blogs away from Ghost - mostly so I could save money on servers, but also so I could have more control of my content. The design is inspired by the &lt;a href=&quot;https://github.com/eddiesigner/liebling&quot;&gt;Liebling&lt;/a&gt; Ghost theme.&lt;/p&gt;
+&lt;p&gt;I had the idea for the &lt;a href=&quot;https://tapedrop.com/2022/01/01/tapedrop-app.html&quot;&gt;Tapedrop app&lt;/a&gt; years ago. At the time, I knew little more than basic HTML, CSS, and JS. Diving into native app development was daunting, and still is. Luckily, web technology has advanced to the point where making an iOS app is as simple as adding &lt;a href=&quot;https://capacitorjs.com/&quot;&gt;Capacitor&lt;/a&gt; to a web app. With &lt;a href=&quot;https://svelte.dev/&quot;&gt;Svelte&lt;/a&gt; as my frontend framework and &lt;a href=&quot;https://firebase.google.com/&quot;&gt;Firebase&lt;/a&gt; on the backend, building this app was a joy. In this post I will go over my experience with this stack.&lt;/p&gt;
 
-&lt;p&gt;Halfmoon-Jekyll is easily customizable thanks to Halfmoon’s CSS variables. This site uses no JS aside from the dark mode toggle - which I feel very clever about.&lt;/p&gt;
+&lt;p&gt;I’d been eager to try &lt;a href=&quot;https://svelte.dev/&quot;&gt;Svelte&lt;/a&gt; since it offered reactivity, while keeping the simplicity of plain HTML and JS. I can’t speak for Vue or Angular, but I have plenty of experience wrestling with React. JSX quickly becomes a tangled mess, and writing logic within a component is ugly and limited. Why can you only use ternary operators for inline conditions? Svelte’s logic operators are fool proof and keep the HTML looking like HTML. Just take 5 minutes to go through the examples &lt;a href=&quot;https://svelte.dev/tutorial/if-blocks&quot;&gt;here&lt;/a&gt; and you will be a convert. The dealbreaker for me though is Svelte’s built in &lt;a href=&quot;https://svelte.dev/tutorial/writable-stores&quot;&gt;stores&lt;/a&gt;, which make state management simple. It’s even more painful to use Redux or React Context at work now that I’ve seen the light.&lt;/p&gt;
 
-&lt;p&gt;Fork it on &lt;a href=&quot;https://github.com/roldyclark/halfmoon-jekyll&quot;&gt;Github&lt;/a&gt; and hack away!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Jekyll" /><summary type="html">Welcome to Halfmoon-Jekyll! I made this Jekyll theme using the Halfmoon front-end framework. It supports categories, pagination, multiple authors, and dark mode.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/halfmoon.jpg" /><media:content medium="image" url="https://harryherskowitz.com/halfmoon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Firebase Auth with Capacitor 3</title><link href="https://harryherskowitz.com/2021/08/23/firebase-capacitor.html" rel="alternate" type="text/html" title="Firebase Auth with Capacitor 3" /><published>2021-08-23T00:00:00-04:00</published><updated>2021-08-23T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/08/23/firebase-capacitor</id><content type="html" xml:base="https://harryherskowitz.com/2021/08/23/firebase-capacitor.html">&lt;p&gt;I recently built my first native iOS app with Svelte, Capacitor, and Firebase (coming soon!). The stack is a breeze to work with, but I ran into a snag getting Firebase to work in the iOS builds. Non of the firebase calls were returning. Luckily, a friendly redditor pointed out the problem: Firebase auth needs to be initialized manually on iOS, or else signInWithPopUp and signInWithRedirect will hold things up - even when using a capacitor plugin that authorizes natively like &lt;a href=&quot;https://github.com/robingenz/capacitor-firebase-authentication&quot;&gt;capacitor-firebase-authentication&lt;/a&gt;. So here’s my code to manually authorize on iOS:&lt;/p&gt;
+&lt;p&gt;On the backend I used &lt;a href=&quot;https://firebase.google.com/&quot;&gt;Firebase&lt;/a&gt; for authorization, data and image storage. Firebase cut my dev time in half. However, there were a few hangups. I had some issues with authorization in iOS, which I wrote about &lt;a href=&quot;http://harryherskowitz.com/2021/08/23/firebase-capacitor.html&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://github.com/firebase/firebase-js-sdk/issues/5553#event-5412439549&quot;&gt;here&lt;/a&gt;. Also, geolocation was a challenge since queries are one dimensional. I used Geohashes to query nearby artists, along with latitude and longitude to filter out outliers. You can read more about this approach &lt;a href=&quot;https://firebase.google.com/docs/firestore/solutions/geoqueries&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Converting my web app for iOS with Capacitor was smooth, and didn’t require me to build it in a specific framework like React Native or Ionic would have. With Capacitor, you simply call modules within plain JS that will run native functionality when available. For example, Capacitor’s &lt;a href=&quot;https://capacitorjs.com/docs/apis/geolocation&quot;&gt;Geolocation&lt;/a&gt; module will use a device’s GPS within a Native app, and use the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API&quot;&gt;Geolocation Web API&lt;/a&gt; within a browser.&lt;/p&gt;
+
+&lt;p&gt;Building the iOS app is done through a single CLI command. The difficult part is configuration. Apple requires a lot of configuration through Xcode and their developer program, and the documentation isn’t great. It was also a headache to submit to the App Store, but their feedback was quick and concise. It took me only two attempts to get it approved, each review taking about 3 days.&lt;/p&gt;
+
+&lt;p&gt;This is the only iOS app I have made, so I don’t have other tech stacks to compare it to. But, if you are looking for a framework-agnostic way to build a cross-platform app, I can highly recommend Capacitor. Firebase has its pains, but not having to code my own backend makes up for it - also it’s free. So is the frontend, which I host on Github Pages. The only money going into this app is Apple’s $100 developer fee.&lt;/p&gt;
+
+&lt;p&gt;So, for anyone hesitant to dive into the native app world, I hope this gives you the reassurance to go for it. You got this!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Svelte" /><category term="Firebase" /><category term="Capacitor" /><category term="JS" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/tapedrop-app-card.jpg" /><media:content medium="image" url="https://harryherskowitz.com/tapedrop-app-card.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Firebase Auth with Capacitor 3</title><link href="https://harryherskowitz.com/2021/08/23/firebase-capacitor.html" rel="alternate" type="text/html" title="Firebase Auth with Capacitor 3" /><published>2021-08-23T00:00:00-04:00</published><updated>2021-08-23T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/08/23/firebase-capacitor</id><content type="html" xml:base="https://harryherskowitz.com/2021/08/23/firebase-capacitor.html">&lt;p&gt;I recently built my first native iOS app with Svelte, Capacitor, and Firebase (coming soon!). The stack is a breeze to work with, but I ran into a snag getting Firebase to work in the iOS builds. Non of the firebase calls were returning. Luckily, a friendly redditor pointed out the problem: Firebase auth needs to be initialized manually on iOS, or else signInWithPopUp and signInWithRedirect will hold things up - even when using a capacitor plugin that authorizes natively like &lt;a href=&quot;https://github.com/robingenz/capacitor-firebase-authentication&quot;&gt;capacitor-firebase-authentication&lt;/a&gt;. So here’s my code to manually authorize on iOS:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function whichAuth() {
   let auth
@@ -21,7 +29,13 @@
 export const auth = whichAuth()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;With this code, my app is working flawlessly - and development has been a joy!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Firebase" /><category term="Capacitor" /><category term="JS" /><summary type="html">I recently built my first native iOS app with Svelte, Capacitor, and Firebase (coming soon!). The stack is a breeze to work with, but I ran into a snag getting Firebase to work in the iOS builds. Non of the firebase calls were returning. Luckily, a friendly redditor pointed out the problem: Firebase auth needs to be initialized manually on iOS, or else signInWithPopUp and signInWithRedirect will hold things up - even when using a capacitor plugin that authorizes natively like capacitor-firebase-authentication. So here’s my code to manually authorize on iOS:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/firebase.jpg" /><media:content medium="image" url="https://harryherskowitz.com/firebase.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Omniauth: Not found. Authentication passthru</title><link href="https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru.html" rel="alternate" type="text/html" title="Omniauth: Not found. Authentication passthru" /><published>2021-07-29T00:00:00-04:00</published><updated>2021-07-29T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru</id><content type="html" xml:base="https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru.html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/facebooklogin.jpg&quot; alt=&quot;wordpress.com screenshot&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;With this code, my app is working flawlessly - and development has been a joy!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Firebase" /><category term="Capacitor" /><category term="JS" /><summary type="html">I recently built my first native iOS app with Svelte, Capacitor, and Firebase (coming soon!). The stack is a breeze to work with, but I ran into a snag getting Firebase to work in the iOS builds. Non of the firebase calls were returning. Luckily, a friendly redditor pointed out the problem: Firebase auth needs to be initialized manually on iOS, or else signInWithPopUp and signInWithRedirect will hold things up - even when using a capacitor plugin that authorizes natively like capacitor-firebase-authentication. So here’s my code to manually authorize on iOS:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/firebase.jpg" /><media:content medium="image" url="https://harryherskowitz.com/firebase.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Halfmoon-Jekyll</title><link href="https://harryherskowitz.com/2021/08/23/halfmoon-jekyll.html" rel="alternate" type="text/html" title="Halfmoon-Jekyll" /><published>2021-08-23T00:00:00-04:00</published><updated>2021-08-23T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/08/23/halfmoon-jekyll</id><content type="html" xml:base="https://harryherskowitz.com/2021/08/23/halfmoon-jekyll.html">&lt;p&gt;Welcome to Halfmoon-Jekyll! I made this &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; theme using the &lt;a href=&quot;https://www.gethalfmoon.com/docs/introduction/&quot;&gt;Halfmoon&lt;/a&gt; front-end framework. It supports categories, pagination, multiple authors, and dark mode.&lt;/p&gt;
+
+&lt;p&gt;I made Halfmoon-Jekyll in order to move my blogs away from Ghost - mostly so I could save money on servers, but also so I could have more control of my content. The design is inspired by the &lt;a href=&quot;https://github.com/eddiesigner/liebling&quot;&gt;Liebling&lt;/a&gt; Ghost theme.&lt;/p&gt;
+
+&lt;p&gt;Halfmoon-Jekyll is easily customizable thanks to Halfmoon’s CSS variables. This site uses no JS aside from the dark mode toggle - which I feel very clever about.&lt;/p&gt;
+
+&lt;p&gt;Fork it on &lt;a href=&quot;https://github.com/roldyclark/halfmoon-jekyll&quot;&gt;Github&lt;/a&gt; and hack away!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="Jekyll" /><summary type="html">Welcome to Halfmoon-Jekyll! I made this Jekyll theme using the Halfmoon front-end framework. It supports categories, pagination, multiple authors, and dark mode.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/halfmoon.jpg" /><media:content medium="image" url="https://harryherskowitz.com/halfmoon.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Omniauth: Not found. Authentication passthru</title><link href="https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru.html" rel="alternate" type="text/html" title="Omniauth: Not found. Authentication passthru" /><published>2021-07-29T00:00:00-04:00</published><updated>2021-07-29T00:00:00-04:00</updated><id>https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru</id><content type="html" xml:base="https://harryherskowitz.com/2021/07/29/not-found-authentication-passthru.html">&lt;p&gt;&lt;img src=&quot;/assets/images/posts/facebooklogin.jpg&quot; alt=&quot;wordpress.com screenshot&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Last week, Facebook and Google logins stopped working in a Rails app I developed. Clicking the login links redirected to a blank page that read “Not found. Authentication passthru”.&lt;/p&gt;
 
@@ -342,252 +356,4 @@ function deg2rad(deg) {
 
 &lt;p&gt;I am currently hosting the app live on Heroku at &lt;a href=&quot;https://www.closecreate.com&quot;&gt;closecreate.com&lt;/a&gt;. I’d love to see the creative community get use out of it! I also hope the open source repo is taken advantage of as this code can be reused to create all kinds of interesting matchmaking apps.&lt;/p&gt;
 
-&lt;p&gt;UPDATE: I am no longer hosting this app, but the code will stay a available on my &lt;a href=&quot;https://github.com/roldyclark/closecreate&quot;&gt;Github&lt;/a&gt;. I am currently working on an updated concept for Closecreate. Stay tuned.&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="React" /><category term="Node" /><category term="JS" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/closecreate2.jpeg" /><media:content medium="image" url="https://harryherskowitz.com/closecreate2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Switching to Redux Hooks</title><link href="https://harryherskowitz.com/2020/08/23/switching-to-redux-hooks.html" rel="alternate" type="text/html" title="Switching to Redux Hooks" /><published>2020-08-23T00:00:00-04:00</published><updated>2020-08-23T00:00:00-04:00</updated><id>https://harryherskowitz.com/2020/08/23/switching-to-redux-hooks</id><content type="html" xml:base="https://harryherskowitz.com/2020/08/23/switching-to-redux-hooks.html">&lt;p&gt;React Hooks are great. They are clean, easy to read, and save time typing boilerplate. However, they are very new, and many popular tutorials have yet to fully adopt them - particularly in Redux. In this post I will be taking a component from Brad Traversy’s &lt;a href=&quot;https://www.udemy.com/course/mern-stack-front-to-back&quot;&gt;MERN Stack Front To Back&lt;/a&gt; tutorial and converting it to use Redux hooks.&lt;/p&gt;
-
-&lt;p&gt;Below is the Posts component. We will be using hooks to access the state of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt; and to dispatch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getPosts&lt;/code&gt; without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connect&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
-import PropTypes from &apos;prop-types&apos;
-import { connect } from &apos;react-redux&apos;
-import PostItem from &apos;./PostItem&apos;
-import PostForm from &apos;./PostForm&apos;
-import { getPosts } from &apos;../../actions/post&apos;
-
-const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
-  useEffect(() =&amp;gt; {
-    getPosts()
-  }, [getPosts])
-
-  return (
-    &amp;lt;Fragment&amp;gt;
-      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
-      &amp;lt;p className=&quot;lead&quot;&amp;gt;
-        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
-      &amp;lt;/p&amp;gt;
-      &amp;lt;PostForm /&amp;gt;
-      &amp;lt;div className=&quot;posts&quot;&amp;gt;
-        {posts.map((post) =&amp;gt; (
-          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
-        ))}
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/Fragment&amp;gt;
-  )
-}
-
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
-}
-
-const mapStateToProps = (state) =&amp;gt; ({
-  post: state.post
-})
-
-export default connect(mapStateToProps, { getPosts })(Posts)
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;First, we can replace  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import { connect } from &apos;react-redux&apos;&lt;/code&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import { useSelector, useDispatch } from &apos;react-redux&apos;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
-import PropTypes from &apos;prop-types&apos;
-import { useSelector, useDispatch } from &apos;react-redux&apos;
-import PostItem from &apos;./PostItem&apos;
-import PostForm from &apos;./PostForm&apos;
-import { getPosts } from &apos;../../actions/post&apos;
-
-const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
-  useEffect(() =&amp;gt; {
-    getPosts()
-  }, [getPosts])
-
-  return (
-    &amp;lt;Fragment&amp;gt;
-      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
-      &amp;lt;p className=&quot;lead&quot;&amp;gt;
-        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
-      &amp;lt;/p&amp;gt;
-      &amp;lt;PostForm /&amp;gt;
-      &amp;lt;div className=&quot;posts&quot;&amp;gt;
-        {posts.map((post) =&amp;gt; (
-          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
-        ))}
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/Fragment&amp;gt;
-  )
-}
-
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
-}
-
-const mapStateToProps = (state) =&amp;gt; ({
-  post: state.post
-})
-
-export default connect(mapStateToProps, { getPosts })(Posts)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Next, delete &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connect(mapStateToprops, {getPosts})&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;const mapStateToProps&lt;/code&gt; block.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
-import PropTypes from &apos;prop-types&apos;
-import { useSelector, useDispatch } from &apos;react-redux&apos;
-import PostItem from &apos;./PostItem&apos;
-import PostForm from &apos;./PostForm&apos;
-import { getPosts } from &apos;../../actions/post&apos;
-
-const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
-  useEffect(() =&amp;gt; {
-    getPosts()
-  }, [getPosts])
-
-  return (
-    &amp;lt;Fragment&amp;gt;
-      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
-      &amp;lt;p className=&quot;lead&quot;&amp;gt;
-        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
-      &amp;lt;/p&amp;gt;
-      &amp;lt;PostForm /&amp;gt;
-      &amp;lt;div className=&quot;posts&quot;&amp;gt;
-        {posts.map((post) =&amp;gt; (
-          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
-        ))}
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/Fragment&amp;gt;
-  )
-}
-
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
-}
-
-export default Posts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now we’re ready for the hooks. First is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useSelector&lt;/code&gt; hook, which will get &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;posts&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state.post&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
-import PropTypes from &apos;prop-types&apos;
-import { useSelector, useDispatch } from &apos;react-redux&apos;
-import PostItem from &apos;./PostItem&apos;
-import PostForm from &apos;./PostForm&apos;
-import { getPosts } from &apos;../../actions/post&apos;
-
-const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
-
-  const { posts } = useSelector(state =&amp;gt; state.post)
-
-  useEffect(() =&amp;gt; {
-    getPosts()
-  }, [getPosts])
-
-  return (
-    &amp;lt;Fragment&amp;gt;
-      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
-      &amp;lt;p className=&quot;lead&quot;&amp;gt;
-        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
-      &amp;lt;/p&amp;gt;
-      &amp;lt;PostForm /&amp;gt;
-      &amp;lt;div className=&quot;posts&quot;&amp;gt;
-        {posts.map((post) =&amp;gt; (
-          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
-        ))}
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/Fragment&amp;gt;
-  )
-}
-
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
-}
-
-export default Posts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;After this we will add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useDispatch&lt;/code&gt; hook, which will allow us to run our function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getPosts&lt;/code&gt; by taking it as an argument like so: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dispatch(getPosts())&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
-import PropTypes from &apos;prop-types&apos;
-import { useSelector, useDispatch } from &apos;react-redux&apos;
-import PostItem from &apos;./PostItem&apos;
-import PostForm from &apos;./PostForm&apos;
-import { getPosts } from &apos;../../actions/post&apos;
-
-const Posts = ({ getPosts, post: { posts } }) =&amp;gt; {
-
-  const { posts } = useSelector(state =&amp;gt; state.post)
-
-  const dispatch = useDispatch()
-
-  useEffect(() =&amp;gt; {
-    dispatch(getPosts())
-  }, [getPosts])
-
-  return (
-    &amp;lt;Fragment&amp;gt;
-      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
-      &amp;lt;p className=&quot;lead&quot;&amp;gt;
-        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
-      &amp;lt;/p&amp;gt;
-      &amp;lt;PostForm /&amp;gt;
-      &amp;lt;div className=&quot;posts&quot;&amp;gt;
-        {posts.map((post) =&amp;gt; (
-          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
-        ))}
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/Fragment&amp;gt;
-  )
-}
-
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired
-}
-
-export default Posts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You can now remove the props from the Posts component, as well as PropTypes — since there aren’t any props to type check. And you’re done! Try it out for yourself.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import React, { Fragment, useEffect } from &apos;react&apos;
-import { useSelector, useDispatch } from &apos;react-redux&apos;
-import PostItem from &apos;./PostItem&apos;
-import PostForm from &apos;./PostForm&apos;
-import { getPosts } from &apos;../../actions/post&apos;
-
-const Posts = () =&amp;gt; {
-
-  const { posts } = useSelector(state =&amp;gt; state.post)
-
-  const dispatch = useDispatch()
-
-  useEffect(() =&amp;gt; {
-    dispatch(getPosts())
-  }, [getPosts])
-
-  return (
-    &amp;lt;Fragment&amp;gt;
-      &amp;lt;h1 className=&quot;large text-primary&quot;&amp;gt;Posts&amp;lt;/h1&amp;gt;
-      &amp;lt;p className=&quot;lead&quot;&amp;gt;
-        &amp;lt;i className=&quot;fas fa-user&quot; /&amp;gt; Welcome to the community
-      &amp;lt;/p&amp;gt;
-      &amp;lt;PostForm /&amp;gt;
-      &amp;lt;div className=&quot;posts&quot;&amp;gt;
-        {posts.map((post) =&amp;gt; (
-          &amp;lt;PostItem key={post._id} post={post} /&amp;gt;
-        ))}
-      &amp;lt;/div&amp;gt;
-    &amp;lt;/Fragment&amp;gt;
-  )
-}
-
-export default Posts
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Note: If you use any data that isn’t from state, you will still need to pass that into props.&lt;/p&gt;
-
-&lt;p&gt;To me, this code looks much more clean. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connect&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mapStateToProps&lt;/code&gt; syntax is cumbersome to type and ineloquent to read. Thank you Hooks!&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="React" /><category term="Javascript" /><category term="NodeJS" /><summary type="html">React Hooks are great. They are clean, easy to read, and save time typing boilerplate. However, they are very new, and many popular tutorials have yet to fully adopt them - particularly in Redux. In this post I will be taking a component from Brad Traversy’s MERN Stack Front To Back tutorial and converting it to use Redux hooks.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/hooks.jpg" /><media:content medium="image" url="https://harryherskowitz.com/hooks.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;UPDATE: I am no longer hosting this app, but the code will stay a available on my &lt;a href=&quot;https://github.com/roldyclark/closecreate&quot;&gt;Github&lt;/a&gt;. I am currently working on an updated concept for Closecreate. Stay tuned.&lt;/p&gt;</content><author><name>Harry Herskowitz</name></author><category term="React" /><category term="Node" /><category term="JS" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://harryherskowitz.com/closecreate2.jpeg" /><media:content medium="image" url="https://harryherskowitz.com/closecreate2.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -12,7 +12,7 @@
 
   <!-- Favicon and title -->
   <link rel="icon" href="/fav.png" />
-  <title>Firebase Auth with Capacitor 3</title>
+  <title>Svelte</title>
 
   <!-- Halfmoon CSS -->
   <link
@@ -92,71 +92,15 @@
 
       <!-- Content wrapper start -->
       <div class="content-wrapper">
-        <div id="post">
-  <div class="post-title text-center"><h1>Firebase Auth with Capacitor 3</h1></div>
-  <div class="d-flex justify-content-center mb-20">
-    
-    <a
-      class="post-categories m-10"
-      href="/category/firebase/index.html"
-      >Firebase</a
-    >
-    
-    <a
-      class="post-categories m-10"
-      href="/category/capacitor/index.html"
-      >Capacitor</a
-    >
-    
-    <a
-      class="post-categories m-10"
-      href="/category/js/index.html"
-      >JS</a
-    >
-    
-    <div class="post-date m-10">August 23, 2021</div>
-  </div>
-  <div class="body m-auto"><p>I recently built my first native iOS app with Svelte, Capacitor, and Firebase (coming soon!). The stack is a breeze to work with, but I ran into a snag getting Firebase to work in the iOS builds. Non of the firebase calls were returning. Luckily, a friendly redditor pointed out the problem: Firebase auth needs to be initialized manually on iOS, or else signInWithPopUp and signInWithRedirect will hold things up - even when using a capacitor plugin that authorizes natively like <a href="https://github.com/robingenz/capacitor-firebase-authentication">capacitor-firebase-authentication</a>. So here’s my code to manually authorize on iOS:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function whichAuth() {
-  let auth
-  if (Capacitor.isNativePlatform()) {
-    auth = initializeAuth(app, {
-      persistence: indexedDBLocalPersistence
-    })
-  } else {
-    auth = getAuth()
-  }
-  return auth
-}
-
-export const auth = whichAuth()
-</code></pre></div></div>
-
-<p>With this code, my app is working flawlessly - and development has been a joy!</p>
-</div>
-  <hr />
-<div id="author" class="d-flex align-items-center justify-content-center">
-  <img
-    class="avatar h-100 w-100"
-    src="/assets/images/avatars/roldy.png"
-  />
-  <div class="m-20">
-    <a href="https://github.com/roldyclark" target="_blank" rel="noopener noreferrer"
-      ><p class="m-0">Harry Herskowitz</p></a
-    >
-    <p class="m-0">Harry is a web developer and programmer with a focus on using technology to empower local artists and communities</p>
-  </div>
-</div>
-<hr />
-
-  <p class="text-center mb-0">Recommended for you</p>
-</div>
- <div id="recommended" class="d-flex flex-wrap justify-content-center m-auto">
+        <h1 class="text-center mt-20"><b>Svelte</b></h1>
+        <div
+  id="secondpage"
+  class="post-container d-flex flex-wrap justify-content-center m-auto"
+>
    
   <a href="/2022/01/05/tapedrop-app.html" class="postcard-sm">
-    <div class="card shadow-sm w-md-350 p-0 h-400">
-      <div class="h-half overflow-hidden fill">
+    <div class="card shadow-sm p-0 h-400">
+      <div class="h-half overflow-hidden d-flex align-items-center">
         <img
           class="image w-full"
           src="/assets/images/posts/tapedrop-app-card.jpg"
@@ -168,30 +112,19 @@ export const auth = whichAuth()
         src="/assets/images/avatars/roldy.png"
       />
       <div class="h-half overflow-hidden">
-        <div class="post-categories">SvelteFirebaseCapacitorJS</div>
+        <div class="post-categories d-flex justify-content-start m-10">
+          
+          <div class="m-10">Svelte</div>
+          
+          <div class="m-10">Firebase</div>
+          
+          <div class="m-10">Capacitor</div>
+          
+          <div class="m-10">JS</div>
+          
+        </div>
         <div class="post-title">How I Built the Tapedrop app</div>
         <div class="post-date">January 05, 2022</div>
-      </div>
-    </div>
-  </a>
-  
-  <a href="/2021/08/23/halfmoon-jekyll.html" class="postcard-sm">
-    <div class="card shadow-sm w-md-350 p-0 h-400">
-      <div class="h-half overflow-hidden fill">
-        <img
-          class="image w-full"
-          src="/assets/images/posts/halfmoon.jpg"
-          class="img-fluid rounded-top"
-        />
-      </div>
-      <img
-        class="avatar"
-        src="/assets/images/avatars/roldy.png"
-      />
-      <div class="h-half overflow-hidden">
-        <div class="post-categories">Jekyll</div>
-        <div class="post-title">Halfmoon-Jekyll</div>
-        <div class="post-date">August 23, 2021</div>
       </div>
     </div>
   </a>
