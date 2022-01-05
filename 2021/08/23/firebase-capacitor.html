@@ -114,7 +114,6 @@
       >JS</a
     >
     
-    <div class="post-date m-10">August 23, 2021</div>
   </div>
   <div class="body m-auto"><p>I recently built my first native iOS app with Svelte, Capacitor, and Firebase (coming soon!). The stack is a breeze to work with, but I ran into a snag getting Firebase to work in the iOS builds. Non of the firebase calls were returning. Luckily, a friendly redditor pointed out the problem: Firebase auth needs to be initialized manually on iOS, or else signInWithPopUp and signInWithRedirect will hold things up - even when using a capacitor plugin that authorizes natively like <a href="https://github.com/robingenz/capacitor-firebase-authentication">capacitor-firebase-authentication</a>. So here’s my code to manually authorize on iOS:</p>
 
@@ -135,6 +134,9 @@ export const auth = whichAuth()
 
 <p>With this code, my app is working flawlessly - and development has been a joy!</p>
 </div>
+  <div class="post-date text-center m-auto mt-10">
+    Published August 23, 2021
+  </div>
   <hr />
 <div id="author" class="d-flex align-items-center justify-content-center">
   <img
